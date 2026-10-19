@@ -1,0 +1,24 @@
+# Archivos compilados
+*.class
+
+# Salidas de compilación habituales de NetBeans / Java
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+/out/
+/target/
+
+# Preferencias privadas del proyecto NetBeans
+/nbproject/private/
+
+# Temporales y registros
+*.log
+*.tmp
+*.bak
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
