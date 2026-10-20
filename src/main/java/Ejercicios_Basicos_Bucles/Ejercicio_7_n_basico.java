@@ -6,7 +6,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java
  * to edit this template
  */
-package ejercicio_7_n_basico;
+package Ejercicios_Basicos_Bucles;
 
 import java.util.Scanner;
 

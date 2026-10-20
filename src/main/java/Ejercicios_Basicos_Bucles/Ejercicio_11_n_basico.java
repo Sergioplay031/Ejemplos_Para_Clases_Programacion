@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio_11_n_basico;
+package Ejercicios_Basicos_Bucles;
 
 /**
  * Ejercicio 11 - Nivel básico.

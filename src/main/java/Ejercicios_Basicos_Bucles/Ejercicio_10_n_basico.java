@@ -5,7 +5,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java
  * to edit this template
  */
-package ejercicio_10_n_basico;
+package Ejercicios_Basicos_Bucles;
 
 /**
  * Ejercicio 10: Mostrar los números del 1 al 100.
