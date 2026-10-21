@@ -9,12 +9,9 @@ import java.util.Scanner;
 /**
  * Calculadora básica utilizando un menú de opciones y una estructura switch.
  *
- * Permite realizar las siguientes operaciones:
- * 1. Sumar dos números.
- * 2. Restar dos números.
- * 3. Multiplicar dos números.
- * 4. Dividir dos números.
- * 0. Salir del programa.
+ * Permite realizar las siguientes operaciones: 1. Sumar dos números. 2. Restar
+ * dos números. 3. Multiplicar dos números. 4. Dividir dos números. 0. Salir del
+ * programa.
  *
  * @author Sergio
  */
@@ -24,7 +21,7 @@ public class calculadora {
     private static Scanner teclado = new Scanner(System.in);
 
     // Valor que indica que el usuario quiere salir del programa.
-    private static int salir = 0;
+    private static final int SALIR = 0;
 
     // Opción seleccionada por el usuario en el menú.
     private static int opcion;
@@ -37,8 +34,8 @@ public class calculadora {
     private static double resultado;
 
     /**
-     * Ejecuta la calculadora y permite realizar operaciones hasta que
-     * el usuario seleccione la opción de salir.
+     * Ejecuta la calculadora y permite realizar operaciones hasta que el
+     * usuario seleccione la opción de salir.
      */
     private static void calculadora() {
 
@@ -48,68 +45,58 @@ public class calculadora {
             // Muestra el menú y lee la opción seleccionada.
             leerOpcionTeclado();
 
-            // Comprueba si el usuario ha seleccionado una opción distinta de salir.
-            if (opcion != salir) {
+            
 
-                // Solicita el primer número.
-                System.out.println("Dime el primer numero: ");
-                numero1 = teclado.nextInt();
-
-                // Solicita el segundo número.
-                System.out.println("Dime el segundo nnumero: ");
-                numero2 = teclado.nextInt();
-
-                // Ejecuta la operación correspondiente a la opción seleccionada.
-                switch (opcion) {
-
-                    // Caso 1: suma los dos números.
-                    case 1 -> {
-                        resultado = numero1 + numero2;
-                        System.out.println(numero1 + " + " + numero2 + " = " + resultado);
+            // Ejecuta la operación correspondiente a la opción seleccionada.
+            switch (opcion) {
+                case 1 -> {
+                    soilicitudNumeros();
+                    resultado = numero1 + numero2;
+                    System.out.println(numero1 + " + " + numero2 + " = " + resultado);
+                    System.out.println("");
+                }
+                case 2 -> {
+                    soilicitudNumeros();
+                    resultado = numero1 - numero2;
+                    System.out.println(numero1 + " * " + numero2 + " = " + resultado);
+                    System.out.println("");
+                }
+                case 3 -> {
+                    resultado = numero1 * numero2;
+                    System.out.println(numero1 + " * " + numero2 + " = " + resultado);
+                    System.out.println("");
+                }
+                case 4 -> {
+                    soilicitudNumeros();
+                    // Comprueba que al menos uno de los números sea distinto de cero.
+                    if (numero1 != 0 || numero2 != 0) {
+                        resultado = numero1 / numero2;
+                        System.out.println(numero1 + " / " + numero2 + " = " + resultado);
                         System.out.println("");
-                    }
-
-                    // Caso 2: resta el segundo número al primero.
-                    case 2 -> {
-                        resultado = numero1 - numero2;
-                        System.out.println(numero1 + " * " + numero2 + " = " + resultado);
-                        System.out.println("");
-                    }
-
-                    // Caso 3: multiplica los dos números.
-                    case 3 -> {
-                        resultado = numero1 * numero2;
-                        System.out.println(numero1 + " * " + numero2 + " = " + resultado);
-                        System.out.println("");
-                    }
-
-                    // Caso 4: divide el primer número entre el segundo.
-                    case 4 -> {
-
-                        // Comprueba que al menos uno de los números sea distinto de cero.
-                        if (numero1 != 0 || numero2 != 0) {
-                            resultado = numero1 / numero2;
-                            System.out.println(numero1 + " / " + numero2 + " = " + resultado);
-                            System.out.println("");
 
                         // Muestra un mensaje si ambos números son cero.
-                        } else {
-                            System.out.println("Error");
-                        }
+                    } else {
+                        System.out.println("Error");
                     }
                 }
-
-            // Si la opción es 0, informa de que el programa va a terminar.
-            } else if (opcion == salir) {
-                System.out.println("Salimos del programa");
-
-            // Esta rama no se ejecuta con la condición actual del if.
-            } else {
-                System.out.println("La opcion no esta disponible");
+                case 0 -> {
+                    System.out.println("Salimos del programa");
+                }
+                default ->
+                    System.out.println("La opcion no esta disponible");
             }
+            // Repite el proceso mientras la opción seleccionada no sea 0.
+        } while (opcion != SALIR);
+    }
 
-        // Repite el proceso mientras la opción seleccionada no sea 0.
-        } while (opcion != salir);
+    private static void soilicitudNumeros() {
+        // Solicita el primer número.
+        System.out.println("Dime el primer numero: ");
+        numero1 = teclado.nextInt();
+        
+        // Solicita el segundo número.
+        System.out.println("Dime el segundo nnumero: ");
+        numero2 = teclado.nextInt();
     }
 
     /**
