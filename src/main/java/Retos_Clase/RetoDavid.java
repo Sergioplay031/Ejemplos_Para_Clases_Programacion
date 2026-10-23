@@ -53,7 +53,8 @@ public class RetoDavid {
     }
 
     private static void solicitarTitulos() {
-        System.out.println("Dime que dos titulos tienes (Doctorado, máster, grado, SMR, DAM, DAW, ADIR): ");
+        System.out.println("Dime que dos titulos tienes (Doctorado, máster, "
+                + "grado, SMR, DAM, DAW, ADIR): ");
         titulo1 = teclado.next();
         titulo2 = teclado.next();
     }
