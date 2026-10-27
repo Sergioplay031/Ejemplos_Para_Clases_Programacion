@@ -69,6 +69,10 @@ public class CajeroAutomatico {
                         System.out.println("fondos insuficientes");
                     }
                 }
+                case 0 -> {
+                    System.out.println("Salimos del cajero");
+                }
+               
             }
         } while (opcion != SALIR);
     }
